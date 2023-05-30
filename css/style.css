@@ -473,13 +473,13 @@ h3 {
 }
 
 .schedule__container {
-	max-width: 1463px;
-	padding: 0 20px;
+	max-width: 1503px;
+	padding: 0 40px;
 	margin: 0 auto;
 }
 .schedule__item {
 	position: relative;
-	margin-top: -20px;
+	margin-top: -137px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -522,6 +522,10 @@ h3 {
 	line-height: 23px;
 	letter-spacing: 0.3em;
 	text-transform: uppercase;
+}
+.schedule__item-content p {
+	position: relative;
+	z-index: 1;
 }
 .schedule__item-content p a {
 	text-decoration: underline;
