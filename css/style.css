@@ -69,3 +69,18 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: inherit;
 	font-weight: 400;
 }
+
+body {
+	background: #F3E3BB;
+}
+
+.bg-image {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url("../img/bg-image.jpg");
+	mix-blend-mode: multiply;
+	background-size: cover;
+}
