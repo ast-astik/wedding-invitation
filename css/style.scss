@@ -187,7 +187,7 @@ h1 {
 
 	&__container {
 		padding: 9.04vh 0 8.53628vh 0;
-		height: 100vh;
+		height: var(--vh100, 100vh);
 
 		@include flex(flex, column, 0, center, space-between);
 

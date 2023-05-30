@@ -221,7 +221,7 @@ h1 {
 }
 .header__container {
 	padding: 9.04vh 0 8.53628vh 0;
-	height: 100vh;
+	height: var(--vh100, 100vh);
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;

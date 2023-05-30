@@ -22,6 +22,13 @@ function BRinHeaderNames(value) {
 	}
 }
 
+function setVH() {
+	let vh100 = window.innerHeight;
+	let vh1 = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh100', `${vh100}px`);
+	document.documentElement.style.setProperty('--vh1', `${vh1}px`);
+};
+
 
 
 window.addEventListener("DOMContentLoaded", event => {
@@ -31,5 +38,10 @@ window.addEventListener("DOMContentLoaded", event => {
 });
 
 window.addEventListener("resize", event => {
+	setVH();
 	window.innerWidth <= 575.5 ? BRinHeaderNames("add") : BRinHeaderNames("remove");
 });
+
+
+
+setVH();
