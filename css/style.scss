@@ -11,8 +11,33 @@ $mr_HamiltoneG: 'mr_HamiltoneG';
 
 
 
+// Mixins
+@mixin font ($fs, $lh) {
+	font-size: $fs;
+	line-height: $lh;
+}
+
+@mixin flex ($f, $fd, $g, $ai, $jc) {
+	display: $f;
+	flex-direction: $fd;
+	gap: $g;
+	align-items: $ai;
+	justify-content: $jc;
+}
+
+
+
 body {
+	font-family: $TenorSans;
+	@include font(16px, 24px);
+	color: #000;
+
 	background: #F3E3BB;
+}
+
+h1 {
+	font-family: $mr_HamiltoneG;
+	@include font(200px, 66.5%);
 }
 
 
@@ -28,4 +53,64 @@ body {
 	background: url("../img/bg-image.jpg");
 	mix-blend-mode: multiply;
 	background-size: cover;
+
+	pointer-events: none;
 }
+
+
+
+.header {
+
+	&__container {
+		padding: 86px 0 81.18px 0;
+		height: 100vh;
+
+		@include flex(flex, column, 0, center, space-between);
+
+		text-align: center;
+	}
+	&__top {
+		@include flex(inline-flex, row, 0, flex-start, center);
+
+		@include font(32px, 37px);
+		letter-spacing: 0.355em;
+		text-transform: uppercase;
+
+		span:nth-child(1),
+		span:nth-child(3) {
+			padding-top: 10.89px;
+		}
+		span:nth-child(2) {
+			font-family: $Denistina;
+			@include font(104.336px, 66.5%);
+			color: #C5B788;
+		}
+	}
+	&__center {
+		&-invite {
+			@include font(20px, 23px);
+			letter-spacing: 0.3em;
+			text-transform: uppercase;
+		}
+		&-names {
+			margin: 80px 0 100px 0;
+		}
+		&-text {
+			display: inline-block;
+			max-width: 650px;
+
+			@include font(20px, 131%);
+			letter-spacing: 0.3em;
+			text-transform: uppercase;
+		}
+	}
+	time {
+		display: inline-block;
+		max-width: 285px;
+
+		@include font(32px, 37px);
+		letter-spacing: 0.355em;
+		text-transform: uppercase;
+	}
+}
+	
