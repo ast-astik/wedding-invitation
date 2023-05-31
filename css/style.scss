@@ -987,13 +987,14 @@ h4 {
 		@include flex(flex, column, 49px, stretch, flex-start);
 
 		input {
+			padding-bottom: 13.5px;
+
 			font-family: $Cormorant;
 			@include font(20px, 24px);
 			font-weight: 500;
 			color: rgba(0, 0, 0, 0.6);
 
 			background: transparent;
-			padding-bottom: 13.5px;
 			border-bottom: 1.5px solid #C5B788;
 
 			&::placeholder {
@@ -1018,6 +1019,7 @@ h4 {
 		label {
 			position: relative;
 
+			display: inline-block;
 			padding-left: calc(20px + 30.5px); // margin + circle width
 
 			font-family: $Cormorant;
@@ -1066,12 +1068,14 @@ h4 {
 	}
 	&__inputs-checkbox {
 		margin: 89.5px 0 42.5px 0;
-		@include flex(flex, column, 32px 28.25px, flex-start, flex-start);
+		@include flex(flex, column, 32px 28px, stretch, flex-start);
 		flex-wrap: wrap;
 		max-height: 140px;
 	}
 	&__input-checkbox {
-		width: 328px;
+		position: relative;
+
+		width: calc(50% - 14px);
 
 		input {
 			@extend %hidden-input;
@@ -1083,7 +1087,8 @@ h4 {
 		label {
 			position: relative;
 
-			padding-left: calc(20px + 30.5px); // margin + circle width
+			display: inline-block;
+			padding-left: calc(20px + 30.5px); // margin + square width
 
 			font-family: $Cormorant;
 			@include font(20px, 24px);
@@ -1110,8 +1115,8 @@ h4 {
 				content: "";
 
 				position: absolute;
-				top: calc((30.5px / 2) - (21px / 2) - 3px); // circle center
-				left: calc((30.5px / 2) - (23px / 2)); // circle center
+				top: calc((30.5px / 2) - (21px / 2) - 3px); // square center
+				left: calc((30.5px / 2) - (23px / 2)); // square center
 
 
 				display: inline-block;
@@ -1141,4 +1146,154 @@ h4 {
 		background: #C5B788;
 	}
 }
-	
+
+@media (max-width: 991.5px) {
+	.form {
+		padding-bottom: 80px;
+
+		&__inputs-text {
+			margin: 50px 0 58px 0;
+			gap: 40px;
+		}
+		&__inputs-checkbox {
+			margin: 65px 0 35px 0;
+			gap: 25px 20px;
+			max-height: 166px;
+		}
+		&__input-radio {
+
+			label {
+				padding-left: calc(20px + 27px); // margin + circle width
+				
+				@include font(18px, 22px);
+
+				&:before {
+					top: -2px;
+
+					width: 27px;
+					height: 27px;
+				}
+				&:after {
+					top: calc((27px / 2) - (9.5px / 2) - 2px); // circle center
+					left: calc((27px / 2) - (9.5px / 2)); // circle center
+
+					width: 9.5px;
+					height: 9.5px;
+				}
+			}
+		}
+		&__input-checkbox {
+			width: calc(50% - 10px);
+
+			label {
+				padding-left: calc(20px + 27px); // margin + square width
+
+				@include font(18px, 22px);
+
+				&:before {
+					top: -2px;
+
+					width: 27px;
+					height: 27px;
+				}
+				&:after {
+					top: calc((27px / 2) - (18px / 2) - 2px); // square center
+					left: calc((27px / 2) - (20px / 2)); // square center
+
+					width: 20px;
+					height: 18px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 767.5px) {
+	.form {
+		padding-bottom: 72px;
+
+		&__inputs-text {
+			margin: 40px 0 45px 0;
+			gap: 30px;
+		}
+		&__inputs-checkbox {
+			margin: 42px 0 30px 0;
+		}
+	}
+}
+@media (max-width: 575.5px) {
+	.form {
+		padding-bottom: 66.42px;
+
+		&__inputs-text {
+			margin: 30px 0 32.5px 0;
+			gap: 20px;
+
+			input {
+				padding-bottom: 8.5px;
+			}
+		}
+		&__inputs-radio {
+			@include flex(flex, column, 15px, stretch, flex-start);
+		}
+		&__input-radio {
+
+			label {
+				padding-left: calc(20px + 25.5px); // margin + circle width
+
+				@include font(16px, 19px);
+
+				&:before {
+					top: -3px;
+
+					width: 25.5px;
+					height: 25.5px;
+				}
+				&:after {
+					top: calc((25.5px / 2) - (9.43px / 2) - 3px); // circle center
+					left: calc((25.5px / 2) - (9.43px / 2)); // circle center
+
+					width: 9.43px;
+					height: 9.43px;
+				}
+			}
+		}
+		&__inputs-checkbox {
+			margin: 25px 0 22.5px 0;
+			flex-wrap: nowrap;
+			max-height: none;
+			gap: 15px;
+		}
+		&__input-checkbox {
+			width: 100%;
+
+			label {
+				padding-left: calc(20px + 25.5px); // margin + square width
+
+				@include font(16px, 19px);
+
+				&:before {
+					top: -3px;
+
+					width: 25.5px;
+					height: 25.5px;
+				}
+				&:after {
+					top: calc((25.5px / 2) - (17.5px / 2) - 3px); // square center
+					left: calc((25.5px / 2) - (19px / 2)); // square center
+
+					width: 19px;
+					height: 17.5px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 350px) {
+	.form {
+		&__content {
+			h3 {
+				margin-left: -10px;
+			}
+		}
+	}
+}
