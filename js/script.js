@@ -50,18 +50,9 @@ function elmYPosition(eID) {
     } return y;
 }
 
-function getHeaderHeight() {
-	if (window.innerWidth < 575.5) {
-		burgerMenu('close');
-		return 51;
-	} else {
-		return 99;
-	}
-}
-
 function smoothScroll(eID) {
     var startY = currentYPosition();
-    var stopY = elmYPosition(eID) - getHeaderHeight();
+    var stopY = elmYPosition(eID);
     var distance = stopY > startY ? stopY - startY : startY - stopY;
  	if (distance < 100) {
         scrollTo(0, stopY); return;
