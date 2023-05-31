@@ -795,3 +795,43 @@ h4 {
 		}
 	}
 }
+
+
+
+.details {
+
+	&__container {
+		max-width: calc(1410px + 40px + 40px); // width + padding-left + padding-right
+		padding: 0 40px;
+		margin: 0 auto;
+	}
+	&__content {
+		@include flex(flex, row, 62px 0, flex-start, center);
+		flex-wrap: wrap;
+	}
+	&__item {
+		width: 23.4%;
+
+		text-align: center;
+
+		p {
+			margin-top: 40px;
+
+			a {
+				font-family: $Cormorant;
+				@include font(18px, 22px);
+				text-decoration: underline;
+				font-weight: 700;
+				color: #000;
+			}
+		}
+	}
+	&__item:nth-child(2) {
+		width: 31.91%;
+		margin: 0 calc((100% - (23.4% * 2 + 31.91%)) / 2); // space-between
+	}
+	&__item:nth-child(4) {
+		margin: 0 calc((100% - (23.4% * 2)) / 3) 0 0; // space-around
+	}
+}
+	
