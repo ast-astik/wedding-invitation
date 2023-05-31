@@ -99,6 +99,9 @@ h4 {
 	h3 {
 		font-size: 40px;
 	}
+	h4 {
+		@include font(18px, 22px);
+	}
 }
 @media (max-width: 575.5px) {
 	h1 {
@@ -109,6 +112,9 @@ h4 {
 	}
 	h3 {
 		font-size: 30px;
+	}
+	h4 {
+		@include font(16px, 131.01%);
 	}
 }
 
@@ -727,13 +733,34 @@ h4 {
 	margin-top: 130px;
 }
 
+@media (max-width: 1200px) {
+	.mt130 {
+		margin-top: 115px;
+	}
+}
+@media (max-width: 991.5px) {
+	.mt130 {
+		margin-top: 100px;
+	}
+}
+@media (max-width: 767.5px) {
+	.mt130 {
+		margin-top: 85px;
+	}
+}
+@media (max-width: 767.5px) {
+	.mt130 {
+		margin-top: 70px;
+	}
+}
+
 
 
 .concept {
 
 	&__container {
-		max-width: calc(774px + 30px + 30px); // width + padding-left + padding-right
-		padding: 0 30px;
+		max-width: calc(774px + 40px + 40px); // width + padding-left + padding-right
+		padding: 0 40px;
 		margin: 0 auto;
 	}
 	&__content {
@@ -751,5 +778,20 @@ h4 {
 	}
 	&__item:nth-child(4) {
 		max-width: 641px;
+	}
+}
+
+@media (max-width: 767.5px) {
+	.concept {
+		&__container {
+			padding: 0 30px;
+		}
+	}
+}
+@media (max-width: 575.5px) {
+	.concept {
+		&__container {
+			padding: 0 20px;
+		}
 	}
 }
