@@ -70,6 +70,18 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
 }
 
+::-moz-placeholder, :-moz-placeholder {
+	opacity: 1;
+}
+
+.form__input-checkbox input, .form__input-radio input {
+	position: absolute;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+
 body {
 	font-family: "Tenor Sans", sans-serif;
 	font-size: 16px;
@@ -947,4 +959,191 @@ h4 {
 		width: 100%;
 		max-width: 300px;
 	}
+}
+.form {
+	position: relative;
+	z-index: 2;
+	padding-bottom: 86px;
+}
+.form__container {
+	max-width: 746px;
+	padding: 0 30px;
+	margin: 0 auto;
+}
+.form__content h3 {
+	text-align: center;
+}
+.form__inputs-text {
+	margin: 60px 0 68px 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	gap: 49px;
+	-webkit-box-align: stretch;
+	    -ms-flex-align: stretch;
+	        align-items: stretch;
+	-webkit-box-pack: start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+}
+.form__inputs-text input {
+	font-family: "Cormorant", serif;
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 500;
+	color: rgba(0, 0, 0, 0.6);
+	background: transparent;
+	padding-bottom: 13.5px;
+	border-bottom: 1.5px solid #C5B788;
+}
+.form__inputs-text input::-webkit-input-placeholder {
+	color: rgba(0, 0, 0, 0.6);
+}
+.form__inputs-text input::-moz-placeholder {
+	color: rgba(0, 0, 0, 0.6);
+}
+.form__inputs-text input:-ms-input-placeholder {
+	color: rgba(0, 0, 0, 0.6);
+}
+.form__inputs-text input::-ms-input-placeholder {
+	color: rgba(0, 0, 0, 0.6);
+}
+.form__inputs-text input::placeholder {
+	color: rgba(0, 0, 0, 0.6);
+}
+.form__inputs-radio {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	gap: 0;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+}
+.form__input-radio {
+	position: relative;
+}
+.form__input-radio input:checked + label:after {
+	opacity: 1;
+}
+.form__input-radio label {
+	position: relative;
+	padding-left: 50.5px;
+	font-family: "Cormorant", serif;
+	font-size: 20px;
+	line-height: 24px;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	font-weight: 700;
+	cursor: pointer;
+}
+.form__input-radio label:before {
+	content: "";
+	position: absolute;
+	top: -3px;
+	left: 0;
+	display: inline-block;
+	width: 30.5px;
+	height: 30.5px;
+	border: 1.5px solid #C5B788;
+	border-radius: 50px;
+}
+.form__input-radio label:after {
+	content: "";
+	position: absolute;
+	top: 6.75px;
+	left: 9.75px;
+	display: inline-block;
+	width: 11px;
+	height: 11px;
+	background: #C5B788;
+	border-radius: 50px;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	opacity: 0;
+}
+.form__inputs-checkbox {
+	margin: 89.5px 0 42.5px 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	gap: 32px 28.25px;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
+	-webkit-box-pack: start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	max-height: 140px;
+}
+.form__input-checkbox {
+	width: 328px;
+}
+.form__input-checkbox input:checked + label:after {
+	opacity: 1;
+}
+.form__input-checkbox label {
+	position: relative;
+	padding-left: 50.5px;
+	font-family: "Cormorant", serif;
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 500;
+	cursor: pointer;
+}
+.form__input-checkbox label:before {
+	content: "";
+	position: absolute;
+	top: -3px;
+	left: 0;
+	display: inline-block;
+	width: 30.5px;
+	height: 30.5px;
+	border: 1.5px solid #C5B788;
+	border-radius: 3px;
+}
+.form__input-checkbox label:after {
+	content: "";
+	position: absolute;
+	top: 1.75px;
+	left: 3.75px;
+	display: inline-block;
+	width: 23px;
+	height: 21px;
+	background: url("../img/check-mark.svg") no-repeat;
+	background-size: cover;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	opacity: 0;
+}
+.form__btn {
+	width: 100%;
+	height: 61px;
+	font-family: "Cormorant", serif;
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: #413516;
+	background: #C5B788;
 }
