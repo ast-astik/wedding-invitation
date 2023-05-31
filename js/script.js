@@ -89,4 +89,5 @@ window.addEventListener("resize", event => {
 
 window.addEventListener('load', () => {
 	setVH();
+	dqs(".bg-image").classList.add("visible");
 });

@@ -153,7 +153,13 @@ h4 {
 	background-size: cover;
 	background-position: center;
 
+	transition: all 0.1s ease;
+
+	opacity: 0;
 	pointer-events: none;
+}
+.bg-image.visible {
+	opacity: 1;
 }
 
 
