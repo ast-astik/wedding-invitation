@@ -1230,6 +1230,9 @@ h4 {
 	.form {
 		padding-bottom: 66.42px;
 
+		&__container {
+			padding: 0 20px;
+		}
 		&__inputs-text {
 			margin: 30px 0 32.5px 0;
 			gap: 20px;
@@ -1298,7 +1301,8 @@ h4 {
 	.form {
 		&__content {
 			h3 {
-				margin-left: -10px;
+				margin-left: -3px;
+				white-space: nowrap;
 			}
 		}
 	}
