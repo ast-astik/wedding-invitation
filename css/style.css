@@ -218,6 +218,10 @@ h4 {
 	background-size: 89px 80px;
 	border-radius: 100px;
 	overflow: hidden;
+	-webkit-transition: all 1s linear;
+	transition: all 1s linear;
+	opacity: 0;
+	visibility: hidden;
 }
 .btn-confirm svg {
 	width: 100%;
@@ -244,6 +248,11 @@ h4 {
 		-webkit-transform: rotate(360deg);
 		        transform: rotate(360deg);
 	}
+}
+
+.btn-confirm.visible {
+	opacity: 1;
+	visibility: visible;
 }
 
 @media (max-width: 1600px) {
@@ -323,6 +332,8 @@ h4 {
 	text-align: center;
 }
 .header__top {
+	position: relative;
+	top: 40.96vh;
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
 	display: inline-flex;
@@ -341,6 +352,12 @@ h4 {
 	line-height: 37px;
 	letter-spacing: 0.355em;
 	text-transform: uppercase;
+	-webkit-transform: translate(0, -50%) scale(2.3478);
+	        transform: translate(0, -50%) scale(2.3478);
+	-webkit-transition: all 1s linear;
+	transition: all 1s linear;
+	opacity: 0;
+	visibility: hidden;
 }
 .header__top span:nth-child(1),
 .header__top span:nth-child(3) {
@@ -351,6 +368,12 @@ h4 {
 	font-size: 104.336px;
 	line-height: 66.5%;
 	color: #C5B788;
+}
+.header__center {
+	-webkit-transition: all 1s linear;
+	transition: all 1s linear;
+	opacity: 0;
+	visibility: hidden;
 }
 .header__center-invite {
 	font-size: 20px;
@@ -373,22 +396,80 @@ h4 {
 	display: none;
 }
 .header time {
+	position: absolute;
+	top: calc(50vh + 81px + 4.49vh);
 	display: inline-block;
 	max-width: 285px;
 	font-size: 32px;
 	line-height: 37px;
 	letter-spacing: 0.355em;
 	text-transform: uppercase;
+	-webkit-transition: all 1s linear;
+	transition: all 1s linear;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.header.frame1 .header__top {
+	opacity: 1;
+	visibility: visible;
+}
+
+.header.frame2 time {
+	opacity: 1;
+	visibility: visible;
+}
+
+.header.frame3 .header__top {
+	top: 0;
+	-webkit-transform: translate(0) scale(1);
+	        transform: translate(0) scale(1);
+}
+.header.frame3 time {
+	top: 91.46372vh;
+	-webkit-transform: translate(0, -100%);
+	        transform: translate(0, -100%);
+}
+
+.header.frame4 time {
+	-webkit-transition: none;
+	transition: none;
+	position: relative;
+	top: 0;
+	-webkit-transform: translate(0);
+	        transform: translate(0);
+}
+.header.frame4 .header__center {
+	opacity: 1;
+	visibility: visible;
 }
 
 @media (max-width: 1600px) {
 	.header__container {
 		padding: 7vh 0 6.5vh 0;
 	}
+	.header__top {
+		top: 43vh;
+	}
+	.header.frame3 time {
+		top: 93.5vh;
+	}
+	.header.frame4 time {
+		top: 0;
+	}
 }
 @media (max-width: 1400px) {
 	.header__container {
 		padding: 6vh 0 5.5vh 0;
+	}
+	.header__top {
+		top: 44vh;
+	}
+	.header.frame3 time {
+		top: 94.5vh;
+	}
+	.header.frame4 time {
+		top: 0;
 	}
 }
 @media (max-width: 1200px) {
@@ -396,6 +477,7 @@ h4 {
 		padding: 5vh 0 4.5vh 0;
 	}
 	.header__top {
+		top: 45vh;
 		font-size: 30px;
 		line-height: 35px;
 	}
@@ -418,8 +500,15 @@ h4 {
 		font-size: 18px;
 	}
 	.header time {
+		top: calc(50vh + 78px + 4.49vh);
 		font-size: 30px;
 		line-height: 35px;
+	}
+	.header.frame3 time {
+		top: 95.5vh;
+	}
+	.header.frame4 time {
+		top: 0;
 	}
 }
 @media (max-width: 991.5px) {
@@ -427,6 +516,7 @@ h4 {
 		padding: 4vh 0 3.5vh 0;
 	}
 	.header__top {
+		top: 46vh;
 		font-size: 26px;
 		line-height: 30px;
 	}
@@ -449,8 +539,15 @@ h4 {
 		font-size: 17px;
 	}
 	.header time {
+		top: calc(50vh + 66.35px + 4.49vh);
 		font-size: 26px;
 		line-height: 30px;
+	}
+	.header.frame3 time {
+		top: 96.5vh;
+	}
+	.header.frame4 time {
+		top: 0;
 	}
 }
 @media (max-width: 767.5px) {
@@ -480,8 +577,15 @@ h4 {
 		font-size: 16px;
 	}
 	.header time {
+		top: calc(50vh + 58.55px + 4.49vh);
 		font-size: 22px;
 		line-height: 26px;
+	}
+	.header.frame3 time {
+		top: 94vh;
+	}
+	.header.frame4 time {
+		top: 0;
 	}
 }
 @media (max-width: 575.5px) {
@@ -489,8 +593,11 @@ h4 {
 		padding: 3.5vh 0 8.76vh 0;
 	}
 	.header__top {
+		top: 46.5vh;
 		font-size: 14px;
 		line-height: 16px;
+		-webkit-transform: translate(0, -50%) scale(1.75);
+		        transform: translate(0, -50%) scale(1.75);
 	}
 	.header__top span:nth-child(1),
 .header__top span:nth-child(3) {
@@ -512,9 +619,16 @@ h4 {
 		font-size: 14px;
 	}
 	.header time {
+		top: calc(50vh + 31.44px + 4.49vh);
 		max-width: 170px;
 		font-size: 18px;
 		line-height: 21px;
+	}
+	.header.frame3 time {
+		top: 91.24vh;
+	}
+	.header.frame4 time {
+		top: 0;
 	}
 }
 @media (max-width: 380px) {
@@ -1297,4 +1411,10 @@ h4 {
 		margin-left: -3px;
 		white-space: nowrap;
 	}
+}
+.animation .main {
+	display: none;
+}
+.animation .form {
+	display: none;
 }

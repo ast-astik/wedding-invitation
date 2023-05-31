@@ -4,7 +4,8 @@ function dqs(value) {
 
 
 
-let headerNames = dqs(".header__center-names")
+let headerNames = dqs(".header__center-names");
+let header = dqs(".header");
 
 
 
@@ -20,6 +21,25 @@ function BRinHeaderNames(value) {
 		newTxt = txt.replace(/<br>/g, ' ');
 		headerNames.textContent = newTxt;	
 	}
+}
+
+function animation(n) {
+
+	header.classList.add(`frame${n}`);
+
+	if (n == 4) {
+		dqs(".btn-confirm").classList.add("visible");
+		setTimeout(() => {
+			dqs("body").classList.remove("animation");
+		}, 1000);
+		return;
+	}
+
+	let newN = n + 1;
+
+	setTimeout(() => {
+		animation(newN);
+	}, 2000)
 }
 
 function setVH() {
@@ -90,4 +110,7 @@ window.addEventListener("resize", event => {
 window.addEventListener('load', () => {
 	setVH();
 	dqs(".bg-image").classList.add("visible");
+	setTimeout(() => {
+		animation(1);
+	}, 1000);
 });

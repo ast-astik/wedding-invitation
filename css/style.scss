@@ -16,6 +16,7 @@ $Denistina: 'Denistina';
 $mr_HamiltoneG: 'mr_HamiltoneG';
 
 $anim: all 0.3s ease;
+$animation: all 1s linear;
 
 
 
@@ -139,6 +140,7 @@ h4 {
 }
 
 
+
 .bg-image {
 	position: fixed;
 	z-index: 1;
@@ -180,6 +182,11 @@ h4 {
 
 	overflow: hidden;
 
+	transition: $animation;
+
+	opacity: 0;
+	visibility: hidden;
+
 	svg {
 		width: 100%;
 		height: 100%;
@@ -191,6 +198,10 @@ h4 {
 		  	100% { transform: rotate(360deg); }
 		}
 	}
+}
+.btn-confirm.visible {
+	opacity: 1;
+	visibility: visible;
 }
 
 @media (max-width: 1600px) {
@@ -272,11 +283,21 @@ h4 {
 		text-align: center;
 	}
 	&__top {
+		position: relative;
+		top: calc(50vh - 9.04vh);
+
 		@include flex(inline-flex, row, 0, flex-start, center);
 
 		@include font(32px, 37px);
 		letter-spacing: 0.355em;
 		text-transform: uppercase;
+
+		transform: translate(0, -50%) scale(2.3478);
+
+		transition: $animation;
+
+		opacity: 0;
+		visibility: hidden;
 
 		span:nth-child(1),
 		span:nth-child(3) {
@@ -289,6 +310,11 @@ h4 {
 		}
 	}
 	&__center {
+		transition: $animation;
+
+		opacity: 0;
+		visibility: hidden;
+
 		&-invite {
 			@include font(20px, 23px);
 			letter-spacing: 0.3em;
@@ -311,12 +337,57 @@ h4 {
 		}
 	}
 	time {
+		position: absolute;
+		top: calc(50vh + 81px + 4.49vh);
+
 		display: inline-block;
 		max-width: 285px;
 
 		@include font(32px, 37px);
 		letter-spacing: 0.355em;
 		text-transform: uppercase;
+
+		transition: $animation;
+
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+.header.frame1 {
+	.header__top {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+.header.frame2 {
+	time {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+.header.frame3 {
+	.header__top {
+		top: 0;
+
+		transform: translate(0) scale(1);
+	}
+
+	time {
+		top: calc(100vh - 8.53628vh);
+
+		transform: translate(0, -100%);
+	}
+}
+.header.frame4 {
+	time {
+		transition: none;
+		position: relative;
+		top: 0;
+		transform: translate(0);
+	}
+	.header__center {
+		opacity: 1;
+		visibility: visible;
 	}
 }
 
@@ -325,12 +396,38 @@ h4 {
 		&__container {
 			padding: 7vh 0 6.5vh 0;
 		}
+		&__top {
+			top: calc(50vh - 7vh);
+		}
+	}
+	.header.frame3 {
+		time {
+			top: calc(100vh - 6.5vh);
+		}
+	}
+	.header.frame4 {
+		time {
+			top: 0;
+		}
 	}
 }
 @media (max-width: 1400px) {
 	.header {
 		&__container {
 			padding: 6vh 0 5.5vh 0;
+		}
+		&__top {
+			top: calc(50vh - 6vh);
+		}
+	}
+	.header.frame3 {
+		time {
+			top: calc(100vh - 5.5vh);
+		}
+	}
+	.header.frame4 {
+		time {
+			top: 0;
 		}
 	}
 }
@@ -341,6 +438,8 @@ h4 {
 		}
 
 		&__top {
+			top: calc(50vh - 5vh);
+
 			@include font(30px, 35px);
 
 			span:nth-child(1),
@@ -365,7 +464,19 @@ h4 {
 			}
 		}
 		time {
+			top: calc(50vh + 78px + 4.49vh);
+
 			@include font(30px, 35px);
+		}
+	}
+	.header.frame3 {
+		time {
+			top: calc(100vh - 4.5vh);
+		}
+	}
+	.header.frame4 {
+		time {
+			top: 0;
 		}
 	}
 }
@@ -376,6 +487,8 @@ h4 {
 		}
 
 		&__top {
+			top: calc(50vh - 4vh);
+
 			@include font(26px, 30px);
 
 			span:nth-child(1),
@@ -400,7 +513,19 @@ h4 {
 			}
 		}
 		time {
+			top: calc(50vh + 66.35px + 4.49vh);
+
 			@include font(26px, 30px);
+		}
+	}
+	.header.frame3 {
+		time {
+			top: calc(100vh - 3.5vh);
+		}
+	}
+	.header.frame4 {
+		time {
+			top: 0;
 		}
 	}
 }
@@ -435,7 +560,19 @@ h4 {
 			}
 		}
 		time {
+			top: calc(50vh + 58.55px + 4.49vh);
+
 			@include font(22px, 26px);
+		}
+	}
+	.header.frame3 {
+		time {
+			top: calc(100vh - 6vh);
+		}
+	}
+	.header.frame4 {
+		time {
+			top: 0;
 		}
 	}
 }
@@ -446,7 +583,11 @@ h4 {
 		}
 
 		&__top {
+			top: calc(50vh - 3.5vh);
+
 			@include font(14px, 16px);
+
+			transform: translate(0, -50%) scale(1.75);
 
 			span:nth-child(1),
 			span:nth-child(3) {
@@ -470,9 +611,21 @@ h4 {
 			}
 		}
 		time {
+			top: calc(50vh + 31.44px + 4.49vh);
+
 			max-width: 170px;
 
 			@include font(18px, 21px);
+		}
+	}
+	.header.frame3 {
+		time {
+			top: calc(100vh - 8.76vh);
+		}
+	}
+	.header.frame4 {
+		time {
+			top: 0;
 		}
 	}
 }
@@ -1305,5 +1458,16 @@ h4 {
 				white-space: nowrap;
 			}
 		}
+	}
+}
+
+
+
+.animation {
+	.main {
+		display: none;
+	}
+	.form {
+		display: none;
 	}
 }
