@@ -60,6 +60,11 @@ h3 {
 	font-family: $mr_HamiltoneG;
 	@include font(60px, 66.5%);
 }
+h4 {
+	@include font(20px, 23px);
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+}
 
 @media (max-width: 1600px) {
 	h1 {
@@ -713,5 +718,38 @@ h3 {
 				top: 2.5px;
 			}
 		}
+	}
+}
+
+
+
+.mt130 {
+	margin-top: 130px;
+}
+
+
+
+.concept {
+
+	&__container {
+		max-width: calc(774px + 30px + 30px); // width + padding-left + padding-right
+		padding: 0 30px;
+		margin: 0 auto;
+	}
+	&__content {
+		@include flex(flex, column, 40px, center, flex-start);
+	}
+	&__item {
+		text-align: center;
+
+		p {
+			margin-top: 8px;
+		}
+	}
+	&__item:nth-child(1) {
+		max-width: 742px;
+	}
+	&__item:nth-child(4) {
+		max-width: 641px;
 	}
 }
