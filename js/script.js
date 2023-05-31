@@ -87,6 +87,6 @@ window.addEventListener("resize", event => {
 	window.innerWidth <= 575.5 ? BRinHeaderNames("add") : BRinHeaderNames("remove");
 });
 
-
-
-setVH();
+window.addEventListener('load', () => {
+	setVH();
+});
