@@ -31,7 +31,12 @@ function animation(n) {
 		dqs(".btn-confirm").classList.add("visible");
 		setTimeout(() => {
 			dqs("body").classList.remove("animation");
+			addInObsBtnConfirm();
+			setTimeout(() => {
+				dqs(".btn-confirm").style.transition = "all 0.5s linear";
+			}, 1000)
 		}, 1000);
+
 		return;
 	} else if (n == 4) {
 		setTimeout(() => {
@@ -97,6 +102,26 @@ function smoothScroll(eID) {
         setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
         leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
     }
+}
+
+// hiding .btn-confirm
+let footerForm = document.querySelectorAll("#form");
+const inObs = new IntersectionObserver(
+	(entries, observer) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				dqs(".btn-confirm").classList.remove("visible");
+			} else {
+				dqs(".btn-confirm").classList.add("visible");
+			}
+		});
+	},
+	{
+		rootMargin: "0px 0px 50px 0px",
+	},
+);
+function addInObsBtnConfirm() {
+	footerForm.forEach(form => inObs.observe(form));
 }
 
 
