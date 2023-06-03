@@ -16,7 +16,7 @@ $Denistina: 'Denistina';
 $mr_HamiltoneG: 'mr_HamiltoneG';
 
 $anim: all 0.3s ease;
-$animation: all 1s linear;
+$animation: opacity 1s linear, visibility 1s linear;
 
 
 
@@ -367,6 +367,17 @@ h4 {
 }
 .header.frame3 {
 	.header__top {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	time {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+.header.frame4 {
+	.header__top {
 		top: 0;
 
 		transform: translate(0) scale(1);
@@ -378,12 +389,17 @@ h4 {
 		transform: translate(0, -100%);
 	}
 }
-.header.frame4 {
+.header.frame5 {
+	.header__top {
+		opacity: 1;
+		visibility: visible;
+	}
 	time {
-		transition: none;
 		position: relative;
 		top: 0;
 		transform: translate(0);
+		opacity: 1;
+		visibility: visible;
 	}
 	.header__center {
 		opacity: 1;
@@ -400,12 +416,12 @@ h4 {
 			top: calc(50vh - 7vh);
 		}
 	}
-	.header.frame3 {
+	.header.frame4 {
 		time {
 			top: calc(var(--vh100, 100vh) - 6.5vh);
 		}
 	}
-	.header.frame4 {
+	.header.frame5 {
 		time {
 			top: 0;
 		}
@@ -420,12 +436,12 @@ h4 {
 			top: calc(50vh - 6vh);
 		}
 	}
-	.header.frame3 {
+	.header.frame4 {
 		time {
 			top: calc(var(--vh100, 100vh) - 5.5vh);
 		}
 	}
-	.header.frame4 {
+	.header.frame5 {
 		time {
 			top: 0;
 		}
@@ -469,12 +485,12 @@ h4 {
 			@include font(30px, 35px);
 		}
 	}
-	.header.frame3 {
+	.header.frame4 {
 		time {
 			top: calc(var(--vh100, 100vh) - 4.5vh);
 		}
 	}
-	.header.frame4 {
+	.header.frame5 {
 		time {
 			top: 0;
 		}
@@ -518,12 +534,12 @@ h4 {
 			@include font(26px, 30px);
 		}
 	}
-	.header.frame3 {
+	.header.frame4 {
 		time {
 			top: calc(var(--vh100, 100vh) - 3.5vh);
 		}
 	}
-	.header.frame4 {
+	.header.frame5 {
 		time {
 			top: 0;
 		}
@@ -565,12 +581,12 @@ h4 {
 			@include font(22px, 26px);
 		}
 	}
-	.header.frame3 {
+	.header.frame4 {
 		time {
 			top: calc(var(--vh100, 100vh) - 6vh);
 		}
 	}
-	.header.frame4 {
+	.header.frame5 {
 		time {
 			top: 0;
 		}
@@ -618,12 +634,12 @@ h4 {
 			@include font(18px, 21px);
 		}
 	}
-	.header.frame3 {
+	.header.frame4 {
 		time {
 			top: calc(var(--vh100, 100vh) - 8.76vh);
 		}
 	}
-	.header.frame4 {
+	.header.frame5 {
 		time {
 			top: 0;
 		}

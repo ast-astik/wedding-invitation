@@ -27,11 +27,16 @@ function animation(n) {
 
 	header.classList.add(`frame${n}`);
 
-	if (n == 4) {
+	if (n == 5) {
 		dqs(".btn-confirm").classList.add("visible");
 		setTimeout(() => {
 			dqs("body").classList.remove("animation");
 		}, 1000);
+		return;
+	} else if (n == 4) {
+		setTimeout(() => {
+			animation(5);
+		}, 500)
 		return;
 	}
 
